@@ -102,6 +102,7 @@ namespace EShopWebAPI1.Controllers
             try
             {
                 eshopentities = new EShopEntities();
+                int x = 0;
                 IQueryable<Customer> result = eshopentities.Customers.Where(cus => cus.Address.ToLower().IndexOf(address.ToLower()) >= 0);
                 return Request.CreateResponse(HttpStatusCode.OK, result);
             }
